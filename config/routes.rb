@@ -1,8 +1,22 @@
 Stampgraff::Application.routes.draw do
-  root :to => "home#index"
+  resources :produtos
 
+
+  authenticated :user do
+    root :to => 'home#index'
+  end
+  root :to => "home#index"
   devise_for :users
 
+#get "home/index"
+
+ # root :to => "home#index"
+
+  #devise_for :users
+
+#	devise_scope :user do
+ # 	get "sign_in", :to => "devise/sessions#new"
+#	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
