@@ -1,4 +1,10 @@
 Stampgraff::Application.routes.draw do
+  resources :os
+
+
+  resources :clientes
+
+
   resources :produtos
 
 

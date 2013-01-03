@@ -17,19 +17,34 @@
         </div>
       </nav>
     </header>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+			<% if user_signed_in? %>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="left">
+						<div class="span2">
+							<ul class="nav nav-list">
+								<li class="nav-header">MENU</li>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Library</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%end%>
+			<div class="span2">
+				<div id="main" role="main">
+					<div class="container">
+						<div class="content">
+							<div class="row">
+								 <%= render 'layouts/messages' %>
+								 <%= yield %>
+							</div>
+							<footer>
+							</footer>
+						</div>
+					</div> <!--! end of .container -->
+				</div> <!--! end of #main -->
+			</div>
   </body>
 </html>
