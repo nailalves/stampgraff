@@ -17,34 +17,32 @@
         </div>
       </nav>
     </header>
-			<% if user_signed_in? %>
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="left">
+			<div id="main" role="main">
+				<div class="container-fluid">
+					<% if user_signed_in? %>
 						<div class="span2">
-							<ul class="nav nav-list">
-								<li class="nav-header">MENU</li>
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Library</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<%end%>
-			<div class="span2">
-				<div id="main" role="main">
-					<div class="container">
-						<div class="content">
-							<div class="row">
-								 <%= render 'layouts/messages' %>
-								 <%= yield %>
+							<div class="row-fluid">
+								<ul class="nav nav-list">
+									<li class="nav-header">MENU</li>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Library</a></li>
+								</ul>
 							</div>
-							<footer>
-							</footer>
 						</div>
-					</div> <!--! end of .container -->
-				</div> <!--! end of #main -->
-			</div>
+					<%end%>
+					<% if user_signed_in? %>
+						<div class="content span10">
+					<%else%>
+						<div class="content span12">
+					<%end%>
+						<div>
+							 <%= render 'layouts/messages' %>
+							 <%= yield %>
+						</div>
+						<footer>
+						</footer>
+					</div>
+				</div> <!--! end of .container -->
+			</div> <!--! end of #main -->
   </body>
 </html>
