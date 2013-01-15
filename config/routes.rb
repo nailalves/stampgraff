@@ -1,12 +1,10 @@
 Stampgraff::Application.routes.draw do
-  resources :os
-
+ 
+  resources :ordems
 
   resources :clientes
 
-
   resources :produtos
-
 
   authenticated :user do
     root :to => 'home#index'

@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th></th>
     <th></th>
@@ -11,7 +10,6 @@
 
 <% @produtos.each do |produto| %>
   <tr>
-    <td><%= produto.id %></td>
     <td><%= produto.name %></td>
     <td><%= link_to 'Show', produto %></td>
     <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
