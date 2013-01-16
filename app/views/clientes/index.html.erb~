@@ -1,4 +1,4 @@
-<h1>Clientes</h1>
+<h1>Listing clientes</h1>
 
 <table>
   <tr>
@@ -36,4 +36,4 @@
 
 <br />
 
-<%= link_to 'Novo Cliente', new_cliente_path %>
+<%= link_to 'Criar Cliente', new_cliente_path %>

@@ -1,0 +1,18 @@
+<%= simple_form_for(@ordem) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :cliente %>
+    <%= f.association :user %>
+    <%= f.association :produto %>
+    <%= f.input :descricao %>
+    <%= f.input :valor %>
+    <%= f.input :criacao %>
+    <%= f.input :observacao %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @ordem.cliente %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @ordem.user %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= @ordem.produto %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @ordem.descricao %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @ordem.valor %>
+</p>
+
+<p>
+  <b>Criacao:</b>
+  <%= @ordem.criacao %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @ordem.observacao %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @ordem.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_ordem_path(@ordem) %> |
+<%= link_to 'Back', ordems_path %>
