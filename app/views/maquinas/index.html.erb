@@ -1,0 +1,23 @@
+<h1>Listing maquinas</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @maquinas.each do |maquina| %>
+  <tr>
+    <td><%= maquina.tipo %></td>
+    <td><%= link_to 'Show', maquina %></td>
+    <td><%= link_to 'Edit', edit_maquina_path(maquina) %></td>
+    <td><%= link_to 'Destroy', maquina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Maquina', new_maquina_path %>
