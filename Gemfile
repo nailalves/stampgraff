@@ -24,7 +24,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails',   '1.0.19'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -41,3 +42,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'devise'
+gem 'rails3-jquery-autocomplete'

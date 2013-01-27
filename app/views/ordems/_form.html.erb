@@ -2,9 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :cliente %>
+		<%= f.input :cliente_id, :url => autocomplete_cliente_name_ordems_path, :as => :autocomplete %>		  
     <%= f.association :user %>
     <%= f.association :produto %>
+		<%= f.association :papel %>
+		<%= f.association :maquina %>
     <%= f.input :descricao %>
     <%= f.input :valor %>
     <%= f.input :criacao %>

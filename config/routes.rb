@@ -1,6 +1,14 @@
 Stampgraff::Application.routes.draw do
  
-  resources :ordems
+  resources :maquinas
+
+
+  resources :papels
+
+
+  resources :ordems do
+ 	 get :autocomplete_cliente_name, :on => :collection
+	end
 
   resources :clientes
 

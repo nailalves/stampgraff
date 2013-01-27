@@ -1,4 +1,6 @@
 class OrdemsController < ApplicationController
+	autocomplete :cliente, :name
+
   # GET /ordems
   # GET /ordems.json
   def index
