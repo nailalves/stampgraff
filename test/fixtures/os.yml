@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cliente_id: 
+  user_id: 
+  produto_id: 
+  descricao: MyText
+  valor: MyString
+  criacao: 2013-01-02
+  observacao: MyText
+  status: MyString
+
+two:
+  cliente_id: 
+  user_id: 
+  produto_id: 
+  descricao: MyText
+  valor: MyString
+  criacao: 2013-01-02
+  observacao: MyText
+  status: MyString
