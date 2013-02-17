@@ -1,0 +1,16 @@
+<%= simple_form_for(@servico) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :produto %>
+    <%= f.association :papel %>
+    <%= f.association :maquina %>
+    <%= f.input :observacao %>
+    <%= f.input :valor, :as => :string %>
+    <%= f.association :ordem %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  produto: 
+  papel: 
+  maquina: 
+  observacao: MyText
+  valor: 1.5
+  ordem: 
+
+two:
+  produto: 
+  papel: 
+  maquina: 
+  observacao: MyText
+  valor: 1.5
+  ordem: 
