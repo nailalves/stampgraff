@@ -6,7 +6,6 @@ class CreateOrdems < ActiveRecord::Migration
       t.references :produto
 			t.references :papel
 			t.references :maquina
-      t.text :descricao
       t.string :valor
       t.date :criacao
       t.text :observacao

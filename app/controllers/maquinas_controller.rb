@@ -1,4 +1,6 @@
 class MaquinasController < ApplicationController
+	before_filter :authenticate_user!
+
   # GET /maquinas
   # GET /maquinas.json
   def index

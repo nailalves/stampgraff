@@ -1,4 +1,6 @@
 class PapelsController < ApplicationController
+	before_filter :authenticate_user!
+
   # GET /papels
   # GET /papels.json
   def index

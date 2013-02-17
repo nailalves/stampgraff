@@ -2,11 +2,11 @@
 
 <p>
   <b>Cliente:</b>
-  <%= @ordem.cliente %>
+  <%= @ordem.cliente_id %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b>Usuário:</b>
   <%= @ordem.user %>
 </p>
 
@@ -41,5 +41,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_ordem_path(@ordem) %> |
-<%= link_to 'Back', ordems_path %>
+<%= link_to 'Editar', edit_ordem_path(@ordem) %> |
+<%= link_to 'Voltar', ordems_path %>

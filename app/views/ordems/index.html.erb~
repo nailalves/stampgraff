@@ -18,16 +18,16 @@
 <% @ordems.each do |ordem| %>
   <tr>
     <td align='center'><%= ordem.cliente_id %></td>
-    <td align='center'><%= ordem.user_id %></td>
+    <td align='center'><%= ordem.user.name %></td>
     <td align='center'><%= ordem.produto_id %></td>
     <td align='center'><%= ordem.descricao %></td>
     <td align='center'><%= ordem.valor %></td>
     <td align='center'><%= ordem.criacao %></td>
     <td align='center'><%= ordem.observacao %></td>
     <td align='center'><%= ordem.status %></td>
-    <td><%= link_to 'Mostrar', ordem %></td>
-    <td><%= link_to 'Editar', edit_ordem_path(ordem) %></td>
-    <td><%= link_to 'Deletar', ordem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td width='50px'><%= link_to 'Mostrar', ordem %></td>
+    <td width='50px'><%= link_to 'Editar', edit_ordem_path(ordem) %></td>
+    <td width='50px'><%= link_to 'Deletar', ordem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

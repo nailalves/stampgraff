@@ -1,4 +1,5 @@
 class OrdemsController < ApplicationController
+	before_filter :authenticate_user!
 	autocomplete :cliente, :name
 
   # GET /ordems

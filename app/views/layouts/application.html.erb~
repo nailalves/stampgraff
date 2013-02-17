@@ -24,9 +24,11 @@
 							<div class="row-fluid">
 								<ul class="nav nav-list">
 									<li class="nav-header">MENU</li>
-									<li><a href="/ordems/new">Criar ordem de serviço</a></li>
-									<li><a href="/produtos/new">Criar produto</a></li>
-									<li><a href="/clientes/new">Criar novo cliente</a></li>
+									<li><a href="/ordems">Ordem de Serviço</a></li>
+									<li><a href="/produtos">Produto</a></li>
+									<li><a href="/clientes">Cliente</a></li>
+									<li><a href="/papels">Papel</a></li>
+									<li><a href="/maquinas">Maquina</a></li>
 								</ul>
 							</div>
 						</div>

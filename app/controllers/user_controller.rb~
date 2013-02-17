@@ -1,0 +1,4 @@
+class Users::SessionsController < Devise::SessionsController
+	before_filter :authenticate_user! :only=> :sign_up
+
+end

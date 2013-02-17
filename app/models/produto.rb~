@@ -1,3 +1,4 @@
 class Produto < ActiveRecord::Base
-  attr_accessible :id, :name
+	has_many :os
+  attr_accessible :name
 end

@@ -2,14 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-		<%= f.input :cliente_id, :url => autocomplete_cliente_name_ordems_path, :as => :autocomplete %>		  
-    <%= f.association :user %>
-    <%= f.association :produto %>
-		<%= f.association :papel %>
-		<%= f.association :maquina %>
-    <%= f.input :descricao %>
+		<%= f.label :cliente_id %>
+		<%= f.autocomplete_field :cliente_id, autocomplete_cliente_name_ordems_path %>		  
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.association :produto, prompt: "Escolha o produto" %>
+		<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel" %>
+		<%= f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina"  %>
     <%= f.input :valor %>
-    <%= f.input :criacao %>
     <%= f.input :observacao %>
     <%= f.input :status %>
   </div>

@@ -18,7 +18,7 @@
 <% @ordems.each do |ordem| %>
   <tr>
     <td align='center'><%= ordem.cliente_id %></td>
-    <td align='center'><%= ordem.user_id %></td>
+    <td align='center'><%= ordem.user.name %></td>
     <td align='center'><%= ordem.produto_id %></td>
     <td align='center'><%= ordem.descricao %></td>
     <td align='center'><%= ordem.valor %></td>
@@ -34,4 +34,4 @@
 
 <br />
 
-<%= link_to 'Nova Ordem', new_ordem_path %>
+<%= link_to 'Nova Ordem', new_ordem_path, :class => 'btn btn-primary' %>
