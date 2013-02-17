@@ -1,5 +1,8 @@
 Stampgraff::Application.routes.draw do
  
+  resources :servicos
+
+
   resources :maquinas
 
 

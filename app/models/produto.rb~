@@ -1,4 +1,5 @@
 class Produto < ActiveRecord::Base
-	has_many :os
+	has_many :ordems
+	has_many :servicos
   attr_accessible :name
 end

@@ -1,8 +1,6 @@
 class Ordem < ActiveRecord::Base
   belongs_to :cliente
   belongs_to :user
-  belongs_to :produto
-	belongs_to :papel
-	belongs_to :maquina
-  attr_accessible :criacao, :descricao, :observacao, :status, :valor, :cliente_id, :user_id, :produto_id, :papel_id, :maquina_id
+	has_many :servicos
+  attr_accessible :criacao, :status, :cliente_id, :user_id
 end
