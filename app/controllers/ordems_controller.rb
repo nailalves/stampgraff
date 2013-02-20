@@ -25,7 +25,7 @@ class OrdemsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @ordem }
     end	
-
+	end
   # GET /ordems/new
   # GET /ordems/new.json
   def new
