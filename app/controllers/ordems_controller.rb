@@ -5,14 +5,14 @@ class OrdemsController < ApplicationController
 
   # GET /ordems
   # GET /ordems.json
-  #def index
-   # @ordems = Ordem.all
+  def index
+    @ordems = Ordem.all
 
-    #respond_to do |format|
-     # format.html # index.html.erb
-      #format.json { render json: @ordems }
-    #end
-  #end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @ordems }
+    end
+  end
 
   # GET /ordems/1
   # GET /ordems/1.json
