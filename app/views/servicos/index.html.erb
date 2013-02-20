@@ -1,4 +1,4 @@
-<h1>Listing servicos</h1>
+<h1>Serviços</h1>
 
 <table>
   <tr>
@@ -21,13 +21,13 @@
     <td><%= servico.observacao %></td>
     <td><%= servico.valor %></td>
     <td><%= servico.ordem %></td>
-    <td><%= link_to 'Show', servico %></td>
-    <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
-    <td><%= link_to 'Destroy', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Exibir', servico %></td>
+    <td><%= link_to 'Editar', edit_servico_path(servico) %></td>
+    <td><%= link_to 'Excluir', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Servico', new_servico_path %>
+<%= link_to 'Novo Serviço', new_servico_path, :class => 'btn btn-primary' %>

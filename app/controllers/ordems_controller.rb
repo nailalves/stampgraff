@@ -1,28 +1,29 @@
 class OrdemsController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :authenticate_user! 
+	#require 'relatorio', :only=> [:relatorio]
 	autocomplete :cliente, :name
 
   # GET /ordems
   # GET /ordems.json
-  def index
-    @ordems = Ordem.all
+  #def index
+   # @ordems = Ordem.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @ordems }
-    end
-  end
+    #respond_to do |format|
+     # format.html # index.html.erb
+      #format.json { render json: @ordems }
+    #end
+  #end
 
   # GET /ordems/1
   # GET /ordems/1.json
-  def show
-    @ordem = Ordem.find(params[:id])
+  #def show
+    #@ordem = Ordem.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @ordem }
-    end
-  end
+    #respond_to do |format|
+      #format.html # show.html.erb
+      #format.json { render json: @ordem }
+    #end
+  #end
 
   # GET /ordems/new
   # GET /ordems/new.json
@@ -83,4 +84,8 @@ class OrdemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+	def relatorio
+
+	end
 end
