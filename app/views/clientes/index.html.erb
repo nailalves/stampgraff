@@ -1,6 +1,8 @@
-<h1>Clientes</h1>
+<div class="inner_content">
+<h1 class="page-header">Clientes</h1>
 
-<table>
+<table  class="table table-striped">
+  <thead>
   <tr>
     <th>Nome</th>
     <th>Rg</th>
@@ -15,25 +17,29 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @clientes.each do |cliente| %>
-  <tr>
-    <td><%= cliente.name %></td>
-    <td><%= cliente.rg %></td>
-    <td><%= cliente.nascimento %></td>
-    <td><%= cliente.telefone1 %></td>
-    <td><%= cliente.telefone2 %></td>
-    <td><%= cliente.celular %></td>
-    <td><%= cliente.endereco %></td>
-    <td><%= cliente.email %></td>
-    <td><%= cliente.status %></td>
-    <td><%= link_to 'Mostar', cliente %></td>
-    <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-    <td><%= link_to 'Deletar', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+	<% @clientes.each do |cliente| %>
+	  <tr>
+		<td><%= cliente.name %></td>
+		<td><%= cliente.rg %></td>
+		<td><%= cliente.nascimento %></td>
+		<td><%= cliente.telefone1 %></td>
+		<td><%= cliente.telefone2 %></td>
+		<td><%= cliente.celular %></td>
+		<td><%= cliente.endereco %></td>
+		<td><%= cliente.email %></td>
+		<td><%= cliente.status %></td>
+		<td><%= link_to 'Mostar', cliente %></td>
+		<td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+		<td><%= link_to 'Deletar', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+  </tbody>
 </table>
 
 <br />
-
-<%= link_to 'Novo Cliente', new_cliente_path, :class => 'btn btn-primary' %>
+</div>
+<div class="form-actions">
+	<%= link_to 'Novo Cliente', new_cliente_path, :class => 'btn btn-primary' %>
+</div>

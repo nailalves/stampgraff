@@ -16,14 +16,15 @@ class OrdemsController < ApplicationController
 
   # GET /ordems/1
   # GET /ordems/1.json
-  #def show
-    #@ordem = Ordem.find(params[:id])
+  def show
+    @ordem = Ordem.find(params[:id])
+		@servico = Servico.new
+		@servicos = Servico.where(:ordem_id => @ordem.id)
 
-    #respond_to do |format|
-      #format.html # show.html.erb
-      #format.json { render json: @ordem }
-    #end
-  #end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @ordem }
+    end	
 
   # GET /ordems/new
   # GET /ordems/new.json

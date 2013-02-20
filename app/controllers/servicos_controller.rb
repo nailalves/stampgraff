@@ -41,10 +41,11 @@ class ServicosController < ApplicationController
   # POST /servicos.json
   def create
     @servico = Servico.new(params[:servico])
+    @ordem = Ordem.find(@servico.ordem_id)
 
     respond_to do |format|
       if @servico.save
-        format.html { redirect_to @servico, notice: 'Servico was successfully created.' }
+        format.html { redirect_to @ordem, notice: 'O servico foi adicionado com sucesso.' }
         format.json { render json: @servico, status: :created, location: @servico }
       else
         format.html { render action: "new" }
@@ -57,10 +58,11 @@ class ServicosController < ApplicationController
   # PUT /servicos/1.json
   def update
     @servico = Servico.find(params[:id])
+	@ordem = Ordem.find(@servico.ordem_id)
 
     respond_to do |format|
       if @servico.update_attributes(params[:servico])
-        format.html { redirect_to @servico, notice: 'Servico was successfully updated.' }
+        format.html { redirect_to @ordem, notice: 'O servico foi editado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,10 +75,11 @@ class ServicosController < ApplicationController
   # DELETE /servicos/1.json
   def destroy
     @servico = Servico.find(params[:id])
+	@ordem = Ordem.find(@servico.ordem_id)
     @servico.destroy
 
     respond_to do |format|
-      format.html { redirect_to servicos_url }
+      format.html { redirect_to @ordem, notice: 'O servico foi excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

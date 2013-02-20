@@ -1,23 +1,30 @@
-<h1>Listing papels</h1>
+<div class="inner_content">
+<h1 class="page-header">Listando papeis</h1>
 
-<table>
+<table  class="table table-striped">
+  <thead>
   <tr>
     <th>Tipo</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-<% @papels.each do |papel| %>
-  <tr>
-    <td><%= papel.tipo %></td>
-    <td><%= link_to 'Show', papel %></td>
-    <td><%= link_to 'Edit', edit_papel_path(papel) %></td>
-    <td><%= link_to 'Destroy', papel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+	<% @papels.each do |papel| %>
+	  <tr>
+		<td><%= papel.tipo %></td>
+		<td><%= link_to 'Show', papel %></td>
+		<td><%= link_to 'Edit', edit_papel_path(papel) %></td>
+		<td><%= link_to 'Destroy', papel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+  </tbody>
 </table>
 
-<br />
+</div>
 
-<%= link_to 'Novo Papel', new_papel_path, :class => 'btn btn-primary' %>
+<div class="form-actions">
+    <%= link_to 'Novo Papel', new_papel_path, :class => 'btn btn-primary' %>
+</div>
+

@@ -1,5 +1,6 @@
-<h1>New produto</h1>
-
+<div class="inner_content">
+<h1  class="page-header">Novo produto</h1>
+</div>
 <%= render 'form' %>
 
 <%= link_to 'Voltar', produtos_path %>

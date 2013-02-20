@@ -1,6 +1,4 @@
-<h1>Editing produto</h1>
-
+<div class="inner_content">
+<h1  class="page-header">Editing produto</h1>
+</div>
 <%= render 'form' %>
-
-<%= link_to 'Show', @produto %> |
-<%= link_to 'Back', produtos_path %>

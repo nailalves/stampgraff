@@ -1,6 +1,7 @@
-<h1>Clientes</h1>
+<div class="inner_content">
+<h1 class="page-header">Clientes</h1>
 
-<table>
+<table  class="table table-striped">
   <tr>
     <th>Nome</th>
     <th>Rg</th>
@@ -35,5 +36,7 @@
 </table>
 
 <br />
-
-<%= link_to 'Novo Cliente', new_cliente_path %>
+</div>
+<div class="form-actions">
+	<%= link_to 'Novo Cliente', new_cliente_path, :class => 'btn btn-primary' %>
+</div>

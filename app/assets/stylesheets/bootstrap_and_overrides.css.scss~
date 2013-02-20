@@ -5,3 +5,9 @@ body { padding-top: 60px; }
 .nav-top li, .nav-top {
 	float:right !important;
 }
+
+.btn-primary { color: white !important; }
+
+form {margin: 0px;}
+
+.form-actions{margin-botom: 0px;}

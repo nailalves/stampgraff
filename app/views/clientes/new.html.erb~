@@ -1,5 +1,7 @@
-<h1>Novo Cliente</h1>
-
+<div class="inner_content">
+<h1 class="page-header">Novo Cliente</h1>
+</div>
 <%= render 'form' %>
 
-<%= link_to 'Voltar', clientes_path %>
+
+

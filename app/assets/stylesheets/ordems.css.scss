@@ -1,3 +1,18 @@
 // Place all the styles related to the Ordems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.observacao_input{
+	height: 100px;
+	width: 100%;
+}
+
+.ordem_input {
+	width: 100%;
+	height: 30px !important;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */	
+	}
+
+.order_menu .btn {font-weight:normal;padding: 5px 15px; margin-left: 20px;}

@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
-
+<div class="inner_content">
+	<h1  class="page-header">Detalhes da máquina</h1>
 <p>
   <b>Tipo:</b>
   <%= @maquina.tipo %>
 </p>
+</div>
 
-
-<%= link_to 'Edit', edit_maquina_path(@maquina) %> |
-<%= link_to 'Back', maquinas_path %>
+<div class="form-actions">
+  <%= link_to 'Edit', edit_maquina_path(@maquina), :class => "btn btn-primary" %>
+  <%= link_to 'Back', maquinas_path, :class => "btn" %>
+</div>
