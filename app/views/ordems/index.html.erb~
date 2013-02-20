@@ -1,37 +1,34 @@
-<h1>Ordens de Serviço</h1>
+<div class="inner_content">
+	<h1 class="page-header">Ordens de Serviço</h1>
+	<table  class="table table-striped">
+	  <thead>
+		  <tr>
+			<th width='100px'>Cliente</th>
+			<th width='100px'>Usuário</th>
+			<th width='100px'>Criacao</th>
+			<th width='100px'>Status</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		  </tr>
+	  </thead>
+	  <tbody>
+		<% @ordems.each do |ordem| %>
+		  <tr>
+			<td align='center'><%= ordem.cliente_id %></td>
+			<td align='center'><%= ordem.user.name %></td>
+			<td align='center'><%= ordem.criacao %></td>
+			<td align='center'><%= ordem.status %></td>
+			<td width='50px'><%= link_to 'Mostrar', ordem %></td>
+			<td width='50px'><%= link_to 'Editar', edit_ordem_path(ordem) %></td>
+			<td width='50px'><%= link_to 'Deletar', ordem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+	  </tbody>
+	</table>
 
-<table>
-  <tr>
-    <th width='100px'>Cliente</th>
-    <th width='100px'>Usuário</th>
-    <th width='100px'>Produto</th>
-    <th width='100px'>Descricao</th>
-    <th width='100px'>Valor</th>
-    <th width='100px'>Criacao</th>
-    <th width='100px'>Observacao</th>
-    <th width='100px'>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ordems.each do |ordem| %>
-  <tr>
-    <td align='center'><%= ordem.cliente_id %></td>
-    <td align='center'><%= ordem.user.name %></td>
-    <td align='center'><%= ordem.produto_id %></td>
-    <td align='center'><%= ordem.descricao %></td>
-    <td align='center'><%= ordem.valor %></td>
-    <td align='center'><%= ordem.criacao %></td>
-    <td align='center'><%= ordem.observacao %></td>
-    <td align='center'><%= ordem.status %></td>
-    <td width='50px'><%= link_to 'Mostrar', ordem %></td>
-    <td width='50px'><%= link_to 'Editar', edit_ordem_path(ordem) %></td>
-    <td width='50px'><%= link_to 'Deletar', ordem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'Nova Ordem', new_ordem_path %>
+	<br />
+</div>
+<div class="form-actions">
+	<%= link_to 'Nova Ordem', new_ordem_path, :class => 'btn btn-primary' %>
+</div>

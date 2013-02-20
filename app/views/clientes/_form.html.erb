@@ -1,19 +1,31 @@
+<div class="inner_content">
 <%= simple_form_for(@cliente) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :rg %>
-    <%= f.input :nascimento %>
-    <%= f.input :telefone1 %>
-    <%= f.input :telefone2 %>
-    <%= f.input :celular %>
-    <%= f.input :endereco %>
-    <%= f.input :email %>
-    <%= f.input :status %>
+  <div class="form-inputs new_client_form">
+	<div class="row">
+		<div class="span3" >
+			<%= f.input :name %>
+			<%= f.input :rg %>
+			<%= f.input :nascimento %>
+		</div>
+		<div class="span3" >
+			<%= f.input :telefone1 %>
+			<%= f.input :telefone2 %>
+			<%= f.input :celular %>
+		</div>
+		<div class="span3" >
+			<%= f.input :endereco %>
+			<%= f.input :email %>
+			<%= f.input :status %>
+		</div>
+		
+		
+	</div>
   </div>
-
+</div>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Adicionar Cliente " , :class => "btn-primary" %>
+    <%= link_to 'Voltar', clientes_path, :class => "btn" %>
   </div>
 <% end %>

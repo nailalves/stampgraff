@@ -1,50 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="inner_content">
+	<h1  class="page-header">Detalhes do cliente</h1>
+	<div class="row">
+		<div class="span3">
+			<p>
+			  <b>Nome:</b>
+			  <%= @cliente.name %>
+			</p>
 
-<p>
-  <b>Nome:</b>
-  <%= @cliente.name %>
-</p>
+			<p>
+			  <b>Rg:</b>
+			  <%= @cliente.rg %>
+			</p>
 
-<p>
-  <b>Rg:</b>
-  <%= @cliente.rg %>
-</p>
+			<p>
+			  <b>Nascimento:</b>
+			  <%= @cliente.nascimento %>
+			</p>
+		</div>
+		<div class="span3">
+			<p>
+			  <b>Telefone1:</b>
+			  <%= @cliente.telefone1 %>
+			</p>
 
-<p>
-  <b>Nascimento:</b>
-  <%= @cliente.nascimento %>
-</p>
+			<p>
+			  <b>Telefone2:</b>
+			  <%= @cliente.telefone2 %>
+			</p>
 
-<p>
-  <b>Telefone1:</b>
-  <%= @cliente.telefone1 %>
-</p>
+			<p>
+			  <b>Celular:</b>
+			  <%= @cliente.celular %>
+			</p>
+		</div>
+		<div class="span3">
+			<p>
+			  <b>Endereco:</b>
+			  <%= @cliente.endereco %>
+			</p>
 
-<p>
-  <b>Telefone2:</b>
-  <%= @cliente.telefone2 %>
-</p>
+			<p>
+			  <b>Email:</b>
+			  <%= @cliente.email %>
+			</p>
 
-<p>
-  <b>Celular:</b>
-  <%= @cliente.celular %>
-</p>
+			<p>
+			  <b>Status:</b>
+			  <%= @cliente.status %>
+			</p>
+		</div>
+	</div>
+</div>
+<div class="form-actions">
+  <%= link_to 'Editar', edit_cliente_path(@cliente), :class => "btn btn-primary" %>
+  <%= link_to 'Voltar', clientes_path, :class => "btn" %>
+</div>
 
-<p>
-  <b>Endereco:</b>
-  <%= @cliente.endereco %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @cliente.email %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @cliente.status %>
-</p>
-
-
-<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
-<%= link_to 'Voltar', clientes_path %>

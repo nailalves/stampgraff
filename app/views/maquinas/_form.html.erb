@@ -1,11 +1,13 @@
+<div class="inner_content">
 <%= simple_form_for(@maquina) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :tipo %>
   </div>
-
+</div>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => "btn-primary" %>
+	<%= link_to 'Back', maquinas_path, :class => "btn" %>
   </div>
-<% end %>
+<% end %>	

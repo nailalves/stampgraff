@@ -1,45 +1,91 @@
-<p id="notice"><%= notice %></p>
+<div class="inner_content">
+	<h2 class="page-header">
+		Ordem de Serviço 
+		<div class="right order_menu">
+			ID:
+			<%= @ordem.id %>
+			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary' %>
+		</div>
+	</h2>
 
-<p>
-  <b>Cliente:</b>
-  <%= @ordem.cliente_id %>
-</p>
+	<div class="row">
 
-<p>
-  <b>Usuário:</b>
-  <%= @ordem.user %>
-</p>
+		<div class="span3" >
+		  <b>Cliente:</b>
+		  <%= @ordem.cliente_id %>
+		</div>
 
-<p>
-  <b>Produto:</b>
-  <%= @ordem.produto %>
-</p>
+		<div class="span2" >
+		  <b>Vendedor:</b>
+		  <%= @ordem.user.name %>
+		</div>
 
-<p>
-  <b>Descricao:</b>
-  <%= @ordem.descricao %>
-</p>
+		<div class="span2" >
+		  <b>Data:</b>
+		  <%= @ordem.criacao %>
+		</div>
 
-<p>
-  <b>Valor:</b>
-  <%= @ordem.valor %>
-</p>
+		<div class="span2" >
+		  <b>Status:</b>
+		  <%= @ordem.status %>
+		</div>
+	</div>
 
-<p>
-  <b>Criacao:</b>
-  <%= @ordem.criacao %>
-</p>
+	<p>
+	  <h3 class="page-header secondary">Serviços Incluídos:</h3>
+	  <table class="table table-striped">
+	  <thead>  
+	  <tr>
+		<th>Produto</th>
+		<th>Papel</th>
+		<th>Maquina</th>
+		<th>Observacao</th>
+		<th>Valor</th>
+		<th class="edit_column"></th>
+		<th class="remove_column"></th>
+	  </tr>
+	  </thead> 
+	  <tbody> 
+	<% @servicos.each do |servico| %> 
+	  <tr>
+		<td><%= servico.produto.name %></td>
+		<td><%= servico.papel.tipo %></td>
+		<td><%= servico.maquina.tipo %></td>
+		<td><%= servico.observacao %></td>
+		<td>R$ <%= servico.valor %></td>
+		<td class="edit_column"><%= link_to 'Editar', edit_servico_path(servico), :class => "btn btn-primary" %></td>
+		<td class="remove_column"><%= link_to 'X', servico, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %></td>
+	  </tr>
+	<% end %>
+	  </tbody>  
+	</table>
+	</p>
 
-<p>
-  <b>Observacao:</b>
-  <%= @ordem.observacao %>
-</p>
 
-<p>
-  <b>Status:</b>
-  <%= @ordem.status %>
-</p>
+	<h3 class="page-header secondary">Incluir Serviço</h3>
+	<%= simple_form_for(@servico) do |f| %>
+	  <%= f.error_notification %>
 
+	  <div class="form-inputs">
+		<div class="row">
+			<div class="span3" >
+				<%= f.association :produto, prompt: "Escolha o produto", :label => "Produto:", input_html: { class: 'ordem_input' }  %>
+				<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
+			</div>
+			<div class="span3" >
+				<%= f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina", :label => "Máquina:", input_html: { class: 'ordem_input' } %>
+				<%= f.input :valor, :as => :string, :label => "Valor (R$):", input_html: { class: 'ordem_input' } %>		
+			</div>
+			<div class="span3" >
+			<%= f.input :observacao, input_html: { class: 'observacao_input' }, :label => "Observação:" %>
+			</div>
+			<%= f.hidden_field :ordem_id, :value => @ordem.id  %>
+		</div>
+	  </div>
+	</div>
+		<div class="form-actions">
+			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
+			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
+		</div>
 
-<%= link_to 'Editar', edit_ordem_path(@ordem) %> |
-<%= link_to 'Voltar', ordems_path %>
+	<% end %>
