@@ -11,7 +11,8 @@ Stampgraff::Application.routes.draw do
 
   resources :ordems do
  	 get :autocomplete_cliente_name, :on => :collection
-	 get "relatorio", :on => :member
+	 get "versao_cliente", :on => :member
+	 get "versao_empresa", :on => :member
 	end
 
   resources :clientes
@@ -24,7 +25,8 @@ Stampgraff::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
 
-	#match '/ordems/relatorio' => 'ordems#relatorio'
+	match '/ordems/versao_cliente/:id' => 'ordems#versao_cliente'
+	match '/ordems/versao_empresa/:id' => 'ordems#versao_empresa'
 
 
 #get "home/index"

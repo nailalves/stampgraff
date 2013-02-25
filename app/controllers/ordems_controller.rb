@@ -1,6 +1,6 @@
 class OrdemsController < ApplicationController
 	before_filter :authenticate_user! 
-	#require 'relatorio', :only=> [:relatorio]
+	layout false, :only=> [:versao_cliente]
 	autocomplete :cliente, :name
 
   # GET /ordems
@@ -86,7 +86,25 @@ class OrdemsController < ApplicationController
     end
   end
 
-	def relatorio
+	def versao_cliente
+		@ordem = Ordem.find(params[:id])
+		#@servico = Servico.new
+		#@servicos = Servico.where(:ordem_id => @ordem.id)
 
+    respond_to do |format|
+      format.html # relatorio.html.erb
+      format.json { render json: @ordem }
+    end	
+	end
+
+	def versao_empresa
+		@ordem = Ordem.find(params[:id])
+		#@servico = Servico.new
+		#@servicos = Servico.where(:ordem_id => @ordem.id)
+
+    respond_to do |format|
+      format.html # relatorio.html.erb
+      format.json { render json: @ordem }
+    end	
 	end
 end
