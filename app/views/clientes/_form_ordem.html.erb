@@ -1,5 +1,5 @@
 <div class="inner_content">
-<%= simple_form_for(@cliente) do |f| %>
+<%= simple_form_for @cliente, :url => "/clientes/ordem", :method => :post do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs new_client_form">
@@ -26,7 +26,7 @@
   </div>
 </div>
   <div class="form-actions">
-    <%= f.button :submit, "Adicionar Cliente " , :class => "btn-primary" %>
+    <%= f.button :submit, "Adicionar Cliente e Ordem" , :class => "btn-primary" %>
     <%= link_to 'Voltar', clientes_path, :class => "btn" %>
   </div>
 <% end %>

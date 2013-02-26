@@ -27,6 +27,8 @@ Stampgraff::Application.routes.draw do
 
 	match '/ordems/versao_cliente/:id' => 'ordems#versao_cliente'
 	match '/ordems/versao_empresa/:id' => 'ordems#versao_empresa'
+	match '/clientes/new/order' => 'clientes#new_for_order'
+	match '/clientes/ordem' => 'clientes#create_ordem'
 
 
 #get "home/index"

@@ -34,6 +34,17 @@ class ClientesController < ApplicationController
     end
   end
 
+  # GET /clientes/new/ordem
+  # GET /clientes/new/ordem.json
+  def new_for_order
+    @cliente = Cliente.new
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @cliente }
+    end
+  end
+
   # GET /clientes/1/edit
   def edit
     @cliente = Cliente.find(params[:id])
@@ -50,6 +61,23 @@ class ClientesController < ApplicationController
         format.json { render json: @cliente, status: :created, location: @cliente }
       else
         format.html { render action: "new" }
+        format.json { render json: @cliente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # POST /clientes/ordem
+  # POST /clientes/ordem.json
+  def create_ordem
+    @cliente = Cliente.new(params[:cliente])
+    @ordem = Ordem.new(:cliente_id => @cliente.id, :user_id => current_user.id)
+
+    respond_to do |format|
+      if @cliente.save and @ordem.save
+        format.html { redirect_to @ordem, notice: 'O cliente foi adicionado com sucesso.' }
+        format.json { render json: @cliente, status: :created, location: @cliente }
+      else
+        format.html { render action: "new_for_order" }
         format.json { render json: @cliente.errors, status: :unprocessable_entity }
       end
     end
