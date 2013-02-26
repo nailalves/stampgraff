@@ -84,8 +84,10 @@
 	  </div>
 	</div>
 		<div class="form-actions">
+			
 			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>
+		<%= link_to "Imprimir", :controller => "ordems", :action => "versao_cliente", :id => @ordem.id, :target=> "_blank"%>
 
 	<% end %>

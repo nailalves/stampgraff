@@ -22,7 +22,7 @@
 
 		<div class="span2" >
 		  <b>Data:</b>
-		  <%= @ordem.criacao %>
+		  <%= @ordem.created_at %>
 		</div>
 
 		<div class="span2" >
@@ -84,6 +84,7 @@
 	  </div>
 	</div>
 		<div class="form-actions">
+			<%= link_to "Imprimir", :controller => "ordems", :action => "versao_cliente", :id => @ordem.id, :target=> "_blank"%>
 			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>
