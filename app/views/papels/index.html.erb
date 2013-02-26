@@ -14,9 +14,9 @@
 	<% @papels.each do |papel| %>
 	  <tr>
 		<td><%= papel.tipo %></td>
-		<td><%= link_to 'Show', papel %></td>
-		<td><%= link_to 'Edit', edit_papel_path(papel) %></td>
-		<td><%= link_to 'Destroy', papel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to 'Mostrar', papel %></td>
+		<td><%= link_to 'Editar', edit_papel_path(papel) %></td>
+		<td><%= link_to 'Remover', papel, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
 	  </tr>
 	<% end %>
   </tbody>

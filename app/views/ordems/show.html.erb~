@@ -5,6 +5,7 @@
 			ID:
 			<%= @ordem.id %>
 			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary' %>
+			<%= link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
 		</div>
 	</h2>
 
@@ -39,6 +40,7 @@
 		<th>Produto</th>
 		<th>Papel</th>
 		<th>Maquina</th>
+		<th>Quantidade</th>
 		<th>Observacao</th>
 		<th>Valor</th>
 		<th class="edit_column"></th>
@@ -51,10 +53,11 @@
 		<td><%= servico.produto.name %></td>
 		<td><%= servico.papel.tipo %></td>
 		<td><%= servico.maquina.tipo %></td>
+		<td><%= servico.quantidade	 %></td>
 		<td><%= servico.observacao %></td>
 		<td>R$ <%= servico.valor %></td>
 		<td class="edit_column"><%= link_to 'Editar', edit_servico_path(servico), :class => "btn btn-primary" %></td>
-		<td class="remove_column"><%= link_to 'X', servico, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %></td>
+		<td class="remove_column"><%= link_to 'X', servico, method: :delete, data: { confirm: 'Remover serviço?' }, :class => "btn" %></td>
 	  </tr>
 	<% end %>
 	  </tbody>  
@@ -70,12 +73,12 @@
 		<div class="row">
 			<div class="span3" >
 				<%= f.association :produto, prompt: "Escolha o produto", :label => "Produto:", input_html: { class: 'ordem_input' }  %>
-				<%= f.association :papel, label_method: :tipo, value_method: :	id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
+				<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
 			</div>
 			<div class="span3" >
 				<%= f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina", :label => "Máquina:", input_html: { class: 'ordem_input' } %>
 				<%= f.input :valor, :as => :string, :label => "Valor (R$):", input_html: { class: 'ordem_input' } %>		
-				
+				<%= f.input :quantidade, :as => :string, :label => "Quantidade:", input_html: { class: 'ordem_input' } %>		
 			</div>
 			<div class="span3" >
 			<%= f.input :observacao, input_html: { class: 'observacao_input' }, :label => "Observação:" %>
@@ -85,7 +88,6 @@
 	  </div>
 	</div>
 		<div class="form-actions">
-			<%= link_to "Imprimir", {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn btn-primary"}%>
 			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>
