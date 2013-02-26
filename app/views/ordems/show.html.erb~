@@ -4,7 +4,7 @@
 		<div class="right order_menu">
 			ID:
 			<%= @ordem.id %>
-			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary' %>
+			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary alterar' %>
 			<%= link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
 		</div>
 	</h2>

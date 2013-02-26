@@ -70,12 +70,17 @@ class ClientesController < ApplicationController
   # POST /clientes/ordem.json
   def create_ordem
     @cliente = Cliente.new(params[:cliente])
-    @ordem = Ordem.new(:cliente_id => @cliente.id, :user_id => current_user.id)
 
     respond_to do |format|
-      if @cliente.save and @ordem.save
-        format.html { redirect_to @ordem, notice: 'O cliente foi adicionado com sucesso.' }
-        format.json { render json: @cliente, status: :created, location: @cliente }
+      if @cliente.save
+	@ordem = Ordem.new(:cliente_id => @cliente.id, :user_id => current_user.id)
+	if @ordem.save
+		format.html { redirect_to @ordem, notice: 'O cliente foi adicionado com sucesso.' }
+		format.json { render json: @cliente, status: :created, location: @cliente }
+	else
+		format.html { render action: "index" }
+        	format.json { render json: @cliente.errors, status: :unprocessable_entity }
+	end
       else
         format.html { render action: "new_for_order" }
         format.json { render json: @cliente.errors, status: :unprocessable_entity }
