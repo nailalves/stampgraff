@@ -13,7 +13,8 @@
 </div>
 
 	  <div class="form-actions">
-	    <%= f.button :submit, "Criar Ordem de Serviço", :class => "btn-primary" %>
+			<%= link_to "Criar Novo Cliente", {:controller => "clientes", :action => "new"}, {:class=>"btn btn-primary"}%>
+	    <%= f.button :submit, "Criar Ordem de Serviço", :class => "btn-primary right" %>
 	    <%= link_to 'Voltar', ordems_path, :class=>"btn" %>
 	  </div>
 	<% end %>

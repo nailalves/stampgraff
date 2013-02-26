@@ -70,11 +70,12 @@
 		<div class="row">
 			<div class="span3" >
 				<%= f.association :produto, prompt: "Escolha o produto", :label => "Produto:", input_html: { class: 'ordem_input' }  %>
-				<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
+				<%= f.association :papel, label_method: :tipo, value_method: :	id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
 			</div>
 			<div class="span3" >
 				<%= f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina", :label => "Máquina:", input_html: { class: 'ordem_input' } %>
 				<%= f.input :valor, :as => :string, :label => "Valor (R$):", input_html: { class: 'ordem_input' } %>		
+				
 			</div>
 			<div class="span3" >
 			<%= f.input :observacao, input_html: { class: 'observacao_input' }, :label => "Observação:" %>
@@ -84,7 +85,7 @@
 	  </div>
 	</div>
 		<div class="form-actions">
-			<%= link_to "Imprimir", :controller => "ordems", :action => "versao_cliente", :id => @ordem.id, :target=> "_blank"%>
+			<%= link_to "Imprimir", {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn btn-primary"}%>
 			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>

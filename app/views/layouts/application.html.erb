@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "App_Name" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Stampgraff" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "App_Name" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -24,7 +24,7 @@
 							<div class="row-fluid">
 								<ul class="nav nav-list">
 									<li class="nav-header">MENU</li>
-									<li><a href="/ordems">Ordem de Serviço</a></li>
+									<li><a href="/ordems/new">Ordem de Serviço</a></li>
 									<li><a href="/produtos">Produto</a></li>
 									<li><a href="/clientes">Cliente</a></li>
 									<li><a href="/papels">Papel</a></li>

@@ -3,7 +3,12 @@
 	<div class="row">
 		<div class="span3">
 			<p>
-			  <b>Nome:</b>
+			  <b>Cliente:</b>
+			  <%= @cliente.name %>
+			</p>
+			
+			<p>
+			  <b>Contato:</b>
 			  <%= @cliente.name %>
 			</p>
 
@@ -19,18 +24,18 @@
 		</div>
 		<div class="span3">
 			<p>
-			  <b>Telefone1:</b>
-			  <%= @cliente.telefone1 %>
-			</p>
-
-			<p>
-			  <b>Telefone2:</b>
-			  <%= @cliente.telefone2 %>
+			  <b>Telefone:</b>
+			  <%= @cliente.telefone %>
 			</p>
 
 			<p>
 			  <b>Celular:</b>
 			  <%= @cliente.celular %>
+			</p>
+
+			<p>
+			  <b>Celular2:</b>
+			  <%= @cliente.celular2 %>
 			</p>
 		</div>
 		<div class="span3">
@@ -40,13 +45,13 @@
 			</p>
 
 			<p>
-			  <b>Email:</b>
-			  <%= @cliente.email %>
+			  <b>Email da empresa:</b>
+			  <%= @cliente.email_empresa %>
 			</p>
 
 			<p>
-			  <b>Status:</b>
-			  <%= @cliente.status %>
+			  <b>Email pessoal:</b>
+			  <%= @cliente.email_pessoal %>
 			</p>
 		</div>
 	</div>

@@ -7,6 +7,7 @@ class CreateServicos < ActiveRecord::Migration
       t.text :observacao
       t.float :valor
       t.references :ordem
+			t.integer :quantidade
 
       t.timestamps
     end
