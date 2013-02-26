@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Ordem de Serviço</title>
 <%= stylesheet_link_tag "invoice" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
 </head>
 
 <body>
@@ -19,34 +20,35 @@
                 	<div id="header">
                 		<!-- start logo -->
                 		<div id="logo">
-                    		<a href="index.html" title="invoice"><img src="/assets/logo.gif" alt="logo" /></a>
+                    		<img src="/assets/logo.gif" alt="logo" />
+				<form><input type="button" value=" Print this page " onclick="window.print();return false;" style="float: right;margin-top: -50px;" /></form>
                     	</div>
+			
                     	<!-- end logo -->
                     </div>
                     <!-- end header -->
                     <div id="container">
                     	<!-- start Bill From -->
                     	<div id="BillFrom">
-                    		<h2>Your Company Name</h2>
-                        	<span>Your Address Line 1</span>
-                        	<span>Address Line 2</span>
-                        	<span>Town</span>
-                        	<span>Region/State</span>
-                        	<span>Zip/Postal Code</span>
-                        	<span class="number">Mobile Phone: +4530422244</span>
-                        	<span class="black">Send To: <a href="#">client@company.com</a></span>
-                        	<span>Payment due by 15/09/2011</span>
+                    		<h2>StampGraff</h2>
+                        	<span>Endereço Linha 1</span>
+                        	<span>Address Linha 2</span>
+                        	<span>Cidade</span>
+                        	<span>Estado</span>
+                        	<span>Zip</span>
+                        	<span class="number">Telefone: +4530422244</span>
+                        	<span>Vencimento 15/09/2011</span>
                     	</div>
                     	<!-- end Bill From -->
                     	<!-- start Bill To -->
                     	<div id="BillTo">
                    		 	<div class="row">
-                    			<h2>Bill To:</h2>
-                        		<span>Your Client Company Name Recipient Address Line 1 Address Line 2<br />Town<br />Region/State<br />Zip/Postal Code</span>
+                    			<h2>Cliente:</h2>
+                        		<span><%= @ordem.cliente.name %> <br />Address Line 1<br /> Address Line 2<br />Town<br />Region/State<br />Zip/Postal Code</span>
                         	</div>
-                        	<div class="row"><strong>Invoice:</strong><span>00001</span></div>
-                        	<div class="row"><strong>Date:</strong><span>02/09/2011</span></div>
-                        	<div class="row"><strong>Amount:</strong><span>$00.00</span></div>
+                        	<div class="row"><strong>Ordem:</strong><span><%= @ordem.id %></span></div>
+                        	<div class="row"><strong>Data:</strong><span><%= @ordem.created_at %></span></div>
+                        	<div class="row"><strong>Valor:</strong><span>$00.00</span></div>
                     	</div>
                     	<!-- end Bill To -->
                     	<div class="clear"></div>
@@ -62,30 +64,6 @@
                                     	<div class="t4 th">Quantity</div>
                                     	<div class="t5 th">Discount</div>
                                     	<div class="t6 th">Amount</div>
-                                    	<div class="even">
-                                    		<div class="t1 td">Design</div>
-                                        	<div class="t2 td">Corporate website design</div>
-                                        	<div class="t3 td">$00.00</div>
-                                        	<div class="t4 td">1</div>
-                                        	<div class="t5 td">0.00</div>
-                                        	<div class="t6 td">$00.00</div>
-                                    	</div>
-                                    	<div class="odd">
-                                    		<div class="t1 td">Design</div>
-                                        	<div class="t2 td">Corporate website design</div>
-                                        	<div class="t3 td">$00.00</div>
-                                        	<div class="t4 td">1</div>
-                                        	<div class="t5 td">0.00</div>
-                                        	<div class="t6 td">$00.00</div>
-                                    	</div>
-                                    	<div class="even">
-                                    		<div class="t1 td">Design</div>
-                                        	<div class="t2 td">Corporate website design</div>
-                                        	<div class="t3 td">$00.00</div>
-                                        	<div class="t4 td">1</div>
-                                        	<div class="t5 td">0.00</div>
-                                        	<div class="t6 td">$00.00</div>
-                                    	</div>
                                     	<div class="odd">
                                     		<div class="t1 td">Design</div>
                                         	<div class="t2 td">Corporate website design</div>
@@ -145,51 +123,3 @@
 <!-- end wrap -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= stylesheet_link_tag "application", :media => "all" %>
-
-<h1>Ordem de Serviço</h1>
-
-<p>
-  <b>Nº:</b>
-  <%= @ordem.id %>
-</p>
-
-<p>
-  <b>Cliente:</b>
-  <%= @ordem.cliente_id %>
-</p>
-
-<p>
-  <b>Data:</b>
-  <%= @ordem.criacao %>
-</p>
-
-<p>
-  <b>Produto:</b>
-  <%# @servico.produto %>
-</p>
-
-<p>
-  <b>Valor:</b>
-  <%# @servico.valor %>
-</p>
-
-<p>
-  <b>Forma de pagamento:</b>
-  <%# @servico.forma_pagamento %>
-</p>
-
-<form><input type="button" value=" Print this page " onclick="window.print();return false;" /></form>
