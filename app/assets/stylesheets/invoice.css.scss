@@ -1,0 +1,85 @@
+/* CSS Document for invoice */
+/* Developed by: psdtohtmlexperts */
+/*  RESET FILE ----------------------- */
+
+* {outline:none;}
+body{margin:0;padding:0;font-size:12px;height:100%;}
+a:link, a:visited, a:hover, a:active{text-decoration:none;}
+ul, ol{margin:0;padding:0;list-style-type:none;}
+form{margin:0px;padding:0px;}
+a img{border:0;}
+.clearfix:after{content: ".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{min-width:0;display:inline-block;display:block;}
+* html .clearfix{height:1%;}
+.left{float:left;}
+.right{float:right;}
+.textleft{text-align:left;}
+textarea{overflow:auto;}
+.textright{text-align:right;}
+p, h1, h2, h3, h4, h5, h6{margin:0;padding:0;}
+
+/* COMMON TAGS ----------------------- */
+.clear{clear:both;line-height:1px;height:1px;}
+a{color:#515151;}
+
+/* TYPOGRAPHY ---------------------- */
+h1{font-size:2.4em;}
+h2{font-size:2.2em;}
+h3{font-size:2.0em;}
+h4{font-size:1.8em;}
+h5{font-size:1.6em;}
+h6{font-size:1.4em;}
+
+/* LAYOUT TAGS ----------------------- */
+
+body{background:url(/assets/bg_body.jpg) repeat center top;font-family:Arial, Helvetica, sans-serif;color:#515151;font-size:14px;}
+#wrap{width:998px;margin:0 auto;padding:50px 0;}
+#wrap_top{background:url(/assets/bg_wrap_top.png) no-repeat left top;width:100%;float:left;}
+#wrap_mid{background:url(/assets/bg_wrap_bottom.png) no-repeat left bottom;width:100%;float:left;}
+#wrap_bottom{background:url(/assets/bg_wrap_mid.png) repeat-y center top;width:960px;margin:19px 0;padding:0 21px 0 17px;display:inline;float:left;}
+
+#box{width:862px;margin:0 auto;}
+#box h2{font-size:14px;}
+/* header */
+
+#logo{width:100%;padding:50px 0 24px 0;}
+
+#BillFrom{width:50%;float:left;color:#9f9f9f;}
+#BillFrom span{display:block;}
+#BillFrom span.number{padding:18px 0 85px 0;}
+#BillFrom span.black{color:#515151;font-weight:bold;padding:0 0 8px 0;display:block;}
+#BillFrom span.black a{padding:0 0 0 10px;font-weight:normal;}
+#BillTo{width:50%;float:left;}
+#BillTo .row{width:100%;margin:0 0 14px 0;float:left;}
+#BillTo h2, #BillTo strong{width:85px;padding:0 5px 0 160px;display:block;float:left;}
+#BillTo span{width:178px;float:left;}
+
+/* table */
+.table{width:100%;margin:35px 0;}
+.table_top{background:url(/assets/bg_table_top.gif) no-repeat left top;width:100%;float:left;}
+.table_mid{background:url(/assets/bg_table_mid.gif) repeat-y;width:100%;float:left;}
+.table_bottom{background:url(/assets/bg_table_bottom.gif) no-repeat left bottom;width:860px;padding:0 1px 2px 1px;float:left;}
+.table .th{font-weight:bold;border-right:1px solid #dadada;line-height:53px;padding:0 0 0 20px;float:left;}
+.table .td{color:#9f9f9f;border-right:1px solid #dadada;line-height:51px;padding:0 0 0 20px;border-top:1px solid #dadada;float:left;}
+.t1{width:142px;}
+.t2{width:188px;}
+.t3{width:102px;}
+.t4{width:85px;}
+.t5{width:105px;}
+.t6{width:113px;}
+.table .t6{ border-right:none;}
+.even{background:url(/assets/bg_even.gif) repeat-x;width:100%;float:left;}
+.odd{background:url(/assets/bg_odd.gif) repeat-x;width:100%;float:left;}
+.table .last .td{border-bottom:none;}
+
+.description{width:584px;float:left;}
+.description p{color:#9f9f9f;}
+#total{width:278px;text-align:right;float:left;}
+#total span{font-weight:bold;padding:0 0 15px 0;display:block;}
+#total strong{padding:0 12px 0 0;display:block;font-size:24px;}
+
+/* footer */
+#footer{width:100%;margin:40px 0 50px 0;}
+#footnote{width:495px;padding:10px 0 0 0;float:left;}
+.credits{width:365px;float:left;}
+.credits img{margin:0 0 0 7px;}
