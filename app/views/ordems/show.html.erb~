@@ -13,7 +13,7 @@
 
 		<div class="span3" >
 		  <b>Cliente:</b>
-		  <%= @ordem.cliente_id %>
+		  <%= @ordem.cliente.name %>
 		</div>
 
 		<div class="span2" >

@@ -3,11 +3,11 @@
 	  <%= f.error_notification %>
 
 	  <div class="form-inputs">
-			<%= f.label :cliente_id %>
-			<%= f.autocomplete_field :cliente_id, autocomplete_cliente_name_ordems_path %>		  
+		<%= f.label :cliente_id %>
+		<%= f.autocomplete_field :criacao, autocomplete_cliente_name_ordems_path, :id_element => '#ordem_cliente_id' %>
+
+		<%= f.hidden_field :cliente_id, value: 0 %>	  
 	    <%= f.hidden_field :user_id, value: current_user.id %>
-			<%# f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel" %>
-			<%# f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina"  %>
 	    <%# f.input :status %>
 	  </div>
 </div>

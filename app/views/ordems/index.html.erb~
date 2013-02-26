@@ -15,7 +15,7 @@
 	  <tbody>
 		<% @ordems.each do |ordem| %>
 		  <tr>
-			<td align='center'><%= ordem.cliente_id %></td>
+			<td align='center'><%= ordem.cliente.name %></td>
 			<td align='center'><%= ordem.user.name %></td>
 			<td align='center'><%= ordem.criacao %></td>
 			<td align='center'><%= ordem.status %></td>
