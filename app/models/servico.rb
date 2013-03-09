@@ -3,5 +3,5 @@ class Servico < ActiveRecord::Base
   belongs_to :papel
   belongs_to :maquina
   belongs_to :ordem
-  attr_accessible :observacao, :valor, :quantidade, :produto_id, :papel_id, :maquina_id, :ordem_id
+  attr_accessible :observacao, :valor, :quantidade, :produto_id, :papel_id, :maquina_id, :ordem_id, :tamanho
 end

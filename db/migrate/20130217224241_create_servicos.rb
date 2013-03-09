@@ -8,6 +8,7 @@ class CreateServicos < ActiveRecord::Migration
       t.float :valor
       t.references :ordem
 			t.integer :quantidade
+			t.string :tamanho
 
       t.timestamps
     end

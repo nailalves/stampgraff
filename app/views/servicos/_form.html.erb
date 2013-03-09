@@ -6,8 +6,9 @@
 		<div class="row">
 			<div class="span3" >
 				<%= f.association :produto, prompt: "Escolha o produto", :label => "Produto:", input_html: { class: 'ordem_input' }  %>
-				<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel", :label => "Papel:", input_html: { class: 'ordem_input' } %>
-				<%= f.input :quantidade, :as => :string, :label => "Quantidade:", input_html: { class: 'ordem_input' } %>		
+				<%= f.association :papel, label_method: :tipo, value_method: :id, prompt: "Escolha o papel", :label => "Matéria Prima:", input_html: { class: 'ordem_input' } %>
+				<%= f.input :quantidade, :as => :string, :label => "Quantidade:", input_html: { class: 'ordem_input' } %>	
+				<%= f.input :tamanho, :as => :string, :label => "Tamanho:", input_html: { class: 'ordem_input' } %>	
 			</div>
 			<div class="span3" >
 				<%= f.association :maquina, label_method: :tipo, value_method: :id, prompt: "Escolha a máquina", :label => "Máquina:", input_html: { class: 'ordem_input' } %>
