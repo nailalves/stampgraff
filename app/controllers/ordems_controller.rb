@@ -17,10 +17,14 @@ class OrdemsController < ApplicationController
   # GET /ordems/1
   # GET /ordems/1.json
   def show
+		@total=0;
     @ordem = Ordem.find(params[:id])
 		@servico = Servico.new
 		@servicos = Servico.where(:ordem_id => @ordem.id)
-
+		@servicos.each do |servico|
+			@total = @total + servico.valor
+		end
+		@total.to_s
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @ordem }
@@ -101,6 +105,17 @@ class OrdemsController < ApplicationController
 		@ordem = Ordem.find(params[:id])
 		#@servico = Servico.new
 		#@servicos = Servico.where(:ordem_id => @ordem.id)
+
+    respond_to do |format|
+      format.html # relatorio.html.erb
+      format.json { render json: @ordem }
+    end	
+	end
+
+	def visualizacao
+		@ordem = Ordem.find(params[:id])
+		@servico = Servico.new
+		@servicos = Servico.where(:ordem_id => @ordem.id)
 
     respond_to do |format|
       format.html # relatorio.html.erb

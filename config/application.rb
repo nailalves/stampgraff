@@ -58,5 +58,9 @@ module Stampgraff
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+		config.to_prepare do
+   		Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "login"   : "application" }
+		end
   end
 end

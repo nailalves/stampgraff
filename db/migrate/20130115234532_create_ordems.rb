@@ -5,7 +5,7 @@ class CreateOrdems < ActiveRecord::Migration
       t.references :user
       t.date :criacao
       t.string :status
-			t.string :forma_pagamento
+			t.integer :pagamento
 
       t.timestamps
     end

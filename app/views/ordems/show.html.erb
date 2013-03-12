@@ -2,7 +2,7 @@
 	<h2 class="page-header">
 		Ordem de Serviço 
 		<div class="right order_menu">
-			ID:
+			OS:
 			<%= @ordem.id %>
 			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary alterar' %>
 			<%= link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
@@ -62,6 +62,9 @@
 	<% end %>
 	  </tbody>  
 	</table>
+	<% if @total %>
+		<%=@total%>
+	<%end%>
 	</p>
 
 
@@ -86,10 +89,23 @@
 			<%= f.hidden_field :ordem_id, :value => @ordem.id  %>
 		</div>
 	  </div>
-	</div>
 		<div class="form-actions">
 			<%= f.button :submit, "Incluir Serviço", class: 'btn-primary right' %>
+		</div>
+		<h3 class="page-header secondary">Forma de Pagamento</h3>
+
+		<div class="form_row">
+		<% ["Cheque", "Cartao","Dinheiro", "Deposito"].each do |pagamento| %>
+		    <br><%= radio_button_tag 'pagamento', pagamento, @pagamento == pagamento %>
+		    <%= pagamento.humanize %>
+		  <% end %>
+		</div>
+	</div>
+		<div class="form-actions">
+			<%= f.button :submit, "Fechar OS", class: 'btn-primary right' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>
 
 	<% end %>
+
+	
