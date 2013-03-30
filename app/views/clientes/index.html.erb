@@ -4,10 +4,10 @@
 <table  class="table table-striped">
   <thead>
   <tr>
-    <th>Nome</th>
+    <th>Cliente</th>
     <th>Rg</th>
     <th>Nascimento</th>
-    <th>Telefone1</th>
+    <th>Telefone Fixo</th>
     <th>Celular</th>
     <th>Celular 2</th>
     <th>Endereco</th>
@@ -30,7 +30,7 @@
 		<td><%= cliente.endereco %></td>
 		<td><%= cliente.email_pessoal %></td>
 		<td><%= cliente.email_empresa %></td>
-		<td><%= link_to 'Mostar', cliente %></td>
+		<td><%= link_to 'Mostrar', cliente %></td>
 		<td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
 		<td><%= link_to 'Deletar', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	  </tr>
