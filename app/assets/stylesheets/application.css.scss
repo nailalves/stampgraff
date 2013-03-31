@@ -25,6 +25,19 @@
   margin-bottom: 20px;
 }
 
+.content.login{
+  margin: 0 auto;
+  width: 400px;
+}
+
+.content.login h2{
+  margin-bottom: 20px;
+}
+
+.content.login input.string, .content.login input.password{
+  width: 345px;
+}
+
 .inner_content{
   padding: 10px 20px;
 }
@@ -81,4 +94,8 @@
 .esqueci_senha {
 	margin-left: 25px;
 	line-height: 21px;
+}
+
+.admin_check label{
+	float: left;
 }
