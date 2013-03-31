@@ -112,14 +112,16 @@ class OrdemsController < ApplicationController
     end	
 	end
 
-	def visualizacao
-		@ordem = Ordem.find(params[:id])
-		@servico = Servico.new
-		@servicos = Servico.where(:ordem_id => @ordem.id)
-
+  # GET /ordems/1
+  # GET /ordems/1.json
+  def final
+    @total=0;
+    @ordem = Ordem.find(params[:id])
+    @servico = Servico.new
+    @servicos = Servico.where(:ordem_id => @ordem.id)
     respond_to do |format|
-      format.html # relatorio.html.erb
+      format.html # show.html.erb
       format.json { render json: @ordem }
-    end	
-	end
+    end 
+  end
 end

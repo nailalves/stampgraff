@@ -13,6 +13,7 @@ Stampgraff::Application.routes.draw do
  	 get :autocomplete_cliente_name, :on => :collection
 	 get "versao_cliente", :on => :member
 	 get "versao_empresa", :on => :member
+   get "final", :on => :member
 	end
 
   resources :clientes
@@ -29,7 +30,7 @@ Stampgraff::Application.routes.draw do
 	match '/ordems/versao_empresa/:id' => 'ordems#versao_empresa'
 	match '/clientes/new/order' => 'clientes#new_for_order'
 	match '/clientes/ordem' => 'clientes#create_ordem'
-
+  match '/ordems/:id/final' => 'ordems#final'
 
 #get "home/index"
 

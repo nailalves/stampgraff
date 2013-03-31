@@ -5,7 +5,7 @@
 			OS:
 			<%= @ordem.id %>
 			<%# link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary alterar' %>
-			<%= link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
+			<%# link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
 		</div>
 	</h2>
 
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 		<div class="form-actions">
-			<%= f.button :submit, "Fechar OS", class: 'btn-primary right' %>
+			<%= link_to "Fechar OS", :action=> "final", class: 'btn' %>
 			<%= link_to 'Voltar', ordems_path, class: 'btn' %>
 		</div>
 

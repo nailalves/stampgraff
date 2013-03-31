@@ -4,6 +4,8 @@ class Ordem < ActiveRecord::Base
 	has_many :servicos
   attr_accessible :criacao, :status, :cliente_id, :user_id, :pagamento
 
+  validates_presence_of :cliente_id
+
 
 	FORMA_PAGAMENTO = ["Cheque", "Cartao", "Deposito"]
 
