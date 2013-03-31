@@ -60,10 +60,15 @@
 		<td class="remove_column"><%= link_to 'X', servico, method: :delete, data: { confirm: 'Remover serviço?' }, :class => "btn" %></td>
 	  </tr>
 	<% end %>
+	<% if @total %>
+	  <tr>
+		<td colspan="5" class="total_value">TOTAL</td>
+		<td class="total_value_number">R$ <%=@total%></td>
+		<td class="edit_column"></td>
+		<td class="remove_column"></td>
+	  </tr>
 	  </tbody>  
 	</table>
-	<% if @total %>
-		<%=@total%>
 	<%end%>
 	</p>
 
