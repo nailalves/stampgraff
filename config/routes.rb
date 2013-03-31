@@ -22,7 +22,9 @@ Stampgraff::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+
+  root :to => redirect("/users/sign_in")
+
   devise_for :users
 
 	match '/ordems/versao_cliente/:id' => 'ordems#versao_cliente'
