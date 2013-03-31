@@ -23,7 +23,11 @@ Stampgraff::Application.routes.draw do
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+
   devise_for :users
 
 	match '/ordems/versao_cliente/:id' => 'ordems#versao_cliente'

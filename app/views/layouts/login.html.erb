@@ -18,28 +18,10 @@
       </nav>
     </header>
 			<div id="main" role="main">
-				<div class="container-fluid">
-					<% if user_signed_in? %>
-						<div class="span2">
-							<div class="row-fluid">
-								<ul class="nav nav-list">
-									<li class="nav-header">MENU</li>
-									<li><a href="/ordems">Ordem de Serviço</a></li>
-									<li><a href="/produtos">Produto</a></li>
-									<li><a href="/clientes">Cliente</a></li>
-									<li><a href="/papels">Papel</a></li>
-									<li><a href="/maquinas">Maquinas</a></li>
-								</ul>
-							</div>
-						</div>
-					<%end%>
-					<% if user_signed_in? %>
-						<div class="span10">
-					<%else%>
+				<div class="container">
 						<div class="span12">
-					<%end%>
 						<%= render 'layouts/messages' %>
-						<div class="content">
+						<div class="content login">
 							 <%= yield %>
 						</div>
 						<footer>

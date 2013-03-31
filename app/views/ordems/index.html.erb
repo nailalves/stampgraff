@@ -18,7 +18,7 @@
 		  <tr>
 		  	<td align='center'><%= ordem.id %></td>
 			<td align='center'><%= ordem.cliente.name %></td>
-			<td align='center'><%= ordem.created_at %></td>
+			<td align='center'><%= ordem.created_at.strftime("%d %b %Y") %></td>
 			<td align='center'><%= ordem.pagamento %></td>
 			<td align='center'><%= ordem.status %></td>
 			<td width='50px'><%= link_to 'Mostrar', ordem %></td>
