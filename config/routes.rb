@@ -23,7 +23,9 @@ Stampgraff::Application.routes.draw do
     root :to => 'home#index'
   end
 
-  root :to => redirect("/users/sign_in")
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
   devise_for :users
 
