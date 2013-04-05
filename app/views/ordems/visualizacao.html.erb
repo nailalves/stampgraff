@@ -1,0 +1,63 @@
+<div class="inner_content">
+	<h2 class="page-header">
+		Ordem de Serviço 
+		<div class="right order_menu">
+			OS:
+			<%= @ordem.id %>
+			<%= link_to 'Alterar Ordem', edit_ordem_path(@ordem), class: 'btn btn-primary alterar' %>
+			<%= link_to raw("<i class='icon-print'></i>"), {:controller => "ordems", :action => "versao_cliente", :id => @ordem.id}, {:target=> "_blank", :class=>"btn"}%>
+		</div>
+	</h2>
+
+	<div class="row">
+
+		<div class="span3" >
+		  <b>Cliente:</b>
+		  <%= @ordem.cliente.name %>
+		</div>
+
+		<div class="span2" >
+		  <b>Vendedor:</b>
+		  <%= @ordem.user.name %>
+		</div>
+
+		<div class="span2" >
+		  <b>Data:</b>
+
+		  <%= @ordem.created_at %>
+		</div>
+
+		<div class="span2" >
+		  <b>Status:</b>
+		  <%= @ordem.status %>
+		</div>
+	</div>
+
+	<p>
+	  <h3 class="page-header secondary">Serviços Incluídos:</h3>
+	  <table class="table table-striped">
+	  <thead>  
+	  <tr>
+		<th>Produto</th>
+		<th>Papel</th>
+		<th>Maquina</th>
+		<th>Quantidade</th>
+		<th>Observacao</th>
+		<th>Valor</th>
+	  </tr>
+	  </thead> 
+	  <tbody> 
+	<% @servicos.each do |servico| %> 
+	  <tr>
+		<td><%= servico.produto.name %></td>
+		<td><%= servico.papel.tipo %></td>
+		<td><%= servico.maquina.tipo %></td>
+		<td><%= servico.quantidade	 %></td>
+		<td><%= servico.observacao %></td>
+		<td>R$ <%= servico.valor %></td>
+		</tr>
+	<% end %>
+	  </tbody>  
+	</table>
+	</p>
+</div>
