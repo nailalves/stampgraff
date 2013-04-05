@@ -3,9 +3,26 @@
 	  <%= f.error_notification %>
 
 	  <div class="form-inputs">
-		<%= f.label :cliente_id %>
-		<%= f.autocomplete_field :criacao, autocomplete_cliente_name_ordems_path, :id_element => '#ordem_cliente_id' %>
 
+		<label class="integer required control-label" for="ordem_cliente_id">Buscar Cliente:</label>
+		
+		<div class="input-prepend">
+		  <span class="add-on"><i class="icon-search"></i></span>
+		  <%= f.autocomplete_field :criacao, autocomplete_cliente_name_ordems_path, :id_element => '#ordem_cliente_id' %>
+		</div>
+		<br/><br/>
+		<h1>Dados da Ordem</h1>
+		<div class="cl"></div>
+		<br/>
+		<h5 class="left cliente_label">Cliente: </h5>
+		<div class="input-prepend input-append">
+		  <span class="add-on bot"><i class="icon-remove"></i></span>
+		  <input disabled="disabled" id="ordem_show_value" size="30" type="text" value="Nenhum Cliente Selecionado">
+		  <span class="add-on bot"><b>ID: </b><span class='demonstrative_value'>0</span></span>
+		</div>
+		<div class="cl"></div>
+		<h5 class="left cliente_label">Tipo: </h5>
+		<br/><br/>
 		<%= f.hidden_field :cliente_id, value: 0 %>	  
 	    <%= f.hidden_field :user_id, value: current_user.id %>
 	    <%# f.input :status %>

@@ -15,7 +15,15 @@
 	box-sizing: border-box;         /* Opera/IE 8+ */	
 	}
 
+#ordem_criacao {width: 345px;}
+
 .order_menu .alterar {font-weight:normal;padding: 5px 15px; margin-left: 20px;}
 
 .total_value {font-weight: bold; text-align: right!important;}
 .total_value_number {font-weight: bold;}
+
+.cliente_label {margin-top: 3px; margin-right: 20px;}
+
+#ordem_show_value {background-color: #f3f3f3 !important; font-weight: bold;}
+
+.add-on.bot {background-color: #bbb;}
